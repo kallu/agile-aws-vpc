@@ -1,22 +1,22 @@
 ## AWS VPC template
 
 This is an Cloudformation template for deploying and maintaining VPCs
-as described in [Networking meets Agile Deployment](https://carriagereturn.nl/aws/vpc/network/nat/2021/06/15/agile-networking.html) -blog post. My goal was to
+as described in [Networking meets Agile Deployment](https://carriagereturn.nl/aws/vpc/network/nat/2021/06/15/agile-networking.html) -blog post. It's goals are
 
-* Allow quick VPC deployment to get started building a POC for a new ideas.
+* Allow quick VPC deployment with minimal dependencies to external parties to get start building a POC for a new ideas.
 * Be able to maintain the VPC via Cloudformation stack when new networking
 requirement are introduced, without discarding everything build so far.
-* Have human readble YAML code that can be extented with new features.
+* Have a human readble YAML code that can be extented with new features.
 
 With `vpc.yaml` you can start deploying independent VPC with it's own
 internet gateway and standard public and private subnet layers. This can
 be later extented with dedicated layer for transit gateway connectivity
 and if required local internet gateway can even be removed simply by
-updating the stack parameters. It also supports some exotic configurations
-such as VPC that has only private subnets where all connectivity to outside
+updating the stack parameters. It also supports some more exotic configurations
+such as VPC that has only private subnets and all connectivity to outside
 world is via service endpoints.
 
-NOTE: Not all combinations of changes are tested to be working. Recommendation
+NOTE: Not all combinations of changes are tested. Recommendation
 is to do one change at the time. Ie. first update stack to remove resources
 and then do second update to add new resources.
 
